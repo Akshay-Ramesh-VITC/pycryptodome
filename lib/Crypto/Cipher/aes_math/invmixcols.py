@@ -1,5 +1,5 @@
-from aes_math.gf import gf_mul
-from aes_math.mixcols import mix_single_column_n, mix_columns_n
+from .gf import gf_mul
+from .mixcols import mix_single_column_n, mix_columns_n
 
 def inv_mix_single_column(col):
     a0, a1, a2, a3 = col
@@ -62,4 +62,5 @@ def inv_matrix_gf256(M):
 
 def inv_mix_columns_n(state, M):
     Minv = inv_matrix_gf256(M)
+
     return mix_columns_n(state, Minv)
