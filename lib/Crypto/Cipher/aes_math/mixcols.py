@@ -1,4 +1,4 @@
-from aes_math.gf import gf_mul
+from .gf import gf_mul
 
 def mix_single_column(col):
     a = col[:]
@@ -49,3 +49,4 @@ def mix_columns_n(state, M):
             state[r][c] = mixed[r]
 
     return state
+
